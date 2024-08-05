@@ -19,19 +19,17 @@ You can find the raw data at [IEMOCAP](https://sail.usc.edu/iemocap/) and [MELD]
     python prediction.py --data=./data/newdata.pkl --device=cuda --epochs=1 --batch_size=20
 
 
-## Performance Comparision IEMOCAP
+## Performance Comparison IEMOCAP
 
--|Dataset|Weighted F1(w) | Acc
-:-:|:-:|:-:
-Original|IEMOCAP|71.04% | 70.98%
+|Dataset | Weighted F1(w) | Acc.   |
+|--------|----------------|--------|
+|IEMOCAP | 71.04%         | 70.98% |
 
+## Performance Comparison MELD
 
-
-## Performance Comparision MELD
-
--|Dataset|Weighted F1(w) | Acc
-:-:|:-:|:-:
-Original|MELD|65.40% | 66.53%
+|Dataset | Weighted F1(w) | Acc.   |
+|--------|----------------|--------|
+|MELD    | 65.40%         | 66.53% |
 
 
 # Acknowledgments
