@@ -3,6 +3,9 @@ python==3.10.14
 torch==2.2.2+cu121
 torch-geometric== 2.5.3
 
+## Dataset
+You can find the raw data at [IEMOCAP](https://sail.usc.edu/iemocap/) and [MELD](https://github.com/declare-lab/MELD)
+
 ## Preparing datasets for training
 
     python preprocess.py --data './data/newdata.pkl' --dataset="iemocap"
