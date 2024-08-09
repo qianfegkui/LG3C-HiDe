@@ -31,7 +31,3 @@ You can find the raw data at [IEMOCAP](https://sail.usc.edu/iemocap/) and [MELD]
 |--------|----------------|--------|
 |MELD    | 65.40%         | 66.53% |
 
-
-# Acknowledgments
-
-The structure of our code is inspired by [pytorch-DialogueGCN-mianzhang](https://github.com/mianzhang/dialogue_gcn).
