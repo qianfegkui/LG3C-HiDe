@@ -1,20 +1,20 @@
 import argparse
 import torch
-import himallgg
+import LG3CHiDe
 
-log = himallgg.utils.get_logger()
+log = LG3CHiDe.utils.get_logger()
 
 
 def main(args):
-    himallgg.utils.set_seed(args.seed)
+    LG3CHiDe.utils.set_seed(args.seed)
     log.debug("Loading data from '%s'." % args.data)
-    data = himallgg.utils.load_pkl(args.data)
+    data = LG3CHiDe.utils.load_pkl(args.data)
     log.info("Loaded data.")
     print(data.keys())
-    testset = himallgg.Dataset(data["test"], args.batch_size)
+    testset = LG3CHiDe.Dataset(data["test"], args.batch_size)
     model_file = "save/model.pt"
-    model = himallgg.LGGCN(args).to(args.device)
-    pred = himallgg.Prediction(testset, model, args)
+    model = LG3CHiDe.LGGCN(args).to(args.device)
+    pred = LG3CHiDe.Prediction(testset, model, args)
     ckpt = torch.load(model_file, map_location='cuda:0')
     pred.load_ckpt(ckpt)
     test_f1 = pred.evaluate()

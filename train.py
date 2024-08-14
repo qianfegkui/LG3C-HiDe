@@ -1,28 +1,28 @@
 import argparse
 import torch
-import himallgg
+import LG3CHiDe
 import os
 os.environ['CUDA_LAUNCH_BLOCKING'] = '0'
 
-log = himallgg.utils.get_logger()
+log = LG3CHiDe.utils.get_logger()
 
 def main(args):
-    himallgg.utils.set_seed(args.seed)
+    LG3CHiDe.utils.set_seed(args.seed)
 
     log.debug("Loading data from '%s'." % args.data)
-    data = himallgg.utils.load_pkl(args.data)
+    data = LG3CHiDe.utils.load_pkl(args.data)
     log.info("Loaded data.")
 
-    trainset = himallgg.Dataset(data["train"], args.batch_size)
-    devset = himallgg.Dataset(data["dev"], args.batch_size)
-    testset = himallgg.Dataset(data["test"], args.batch_size)
+    trainset = LG3CHiDe.Dataset(data["train"], args.batch_size)
+    devset = LG3CHiDe.Dataset(data["dev"], args.batch_size)
+    testset = LG3CHiDe.Dataset(data["test"], args.batch_size)
 
     log.debug("Building model...")
     model_file = "./save/model.pt"
-    model = himallgg.LGGCN(args).to(args.device)
-    opt = himallgg.Optim(args.learning_rate, args.max_grad_value, args.weight_decay)
+    model = LG3CHiDe.LGGCN(args).to(args.device)
+    opt = LG3CHiDe.Optim(args.learning_rate, args.max_grad_value, args.weight_decay)
     opt.set_parameters(model.parameters(), args.optimizer)
-    coach = himallgg.Coach(trainset, devset, testset, model, opt, args)
+    coach = LG3CHiDe.Coach(trainset, devset, testset, model, opt, args)
 
     if not args.from_begin:
         ckpt = torch.load(model_file)

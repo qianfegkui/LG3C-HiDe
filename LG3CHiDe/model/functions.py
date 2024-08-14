@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-import himallgg
+import LG3CHiDe
 
 
 def batch_graphifys(features, lengths, speaker_tensor, wp, wf, edge_type_to_idx, device):

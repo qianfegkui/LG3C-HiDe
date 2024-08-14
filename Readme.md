@@ -4,7 +4,7 @@ torch==2.2.2+cu121
 torch-geometric== 2.5.3
 
 ## Dataset
-You can find the raw data at [IEMOCAP](https://sail.usc.edu/iemocap/) and [MELD](https://github.com/declare-lab/MELD)
+We use the IEMOCAP and MELD datasets
 
 ## Preparing datasets for training
 

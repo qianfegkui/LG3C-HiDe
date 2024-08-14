@@ -3,7 +3,7 @@ from .EdgeAtt import EdgeAtt
 from .GCN import GCN, SGCN, GAT
 from .Classifier import Classifier
 from .functions import batch_graphify, batch_graphifyt, batch_graphifys, batch_graphify_
-import himallgg
+import LG3CHiDe
 import torch.nn.functional as F
 from .Fusion import *
 
@@ -44,7 +44,7 @@ class CrossModalAttention(nn.Module):
 
         return output
 
-log = himallgg.utils.get_logger()
+log = LG3CHiDe.utils.get_logger()
 
 class LGGCN(nn.Module):
     def __init__(self, args):

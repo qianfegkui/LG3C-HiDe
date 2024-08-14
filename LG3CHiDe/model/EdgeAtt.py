@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-import himallgg
+import LG3CHiDe
 
-log = himallgg.utils.get_logger()
+log = LG3CHiDe.utils.get_logger()
 
 
 class EdgeAtt(nn.Module):

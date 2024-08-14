@@ -5,9 +5,9 @@ import numpy as np
 import torch
 from tqdm import tqdm
 
-import himallgg
+import LG3CHiDe
 
-log = himallgg.utils.get_logger()
+log = LG3CHiDe.utils.get_logger()
 from sklearn.metrics import f1_score, confusion_matrix, accuracy_score, classification_report, precision_recall_fscore_support
 from sklearn import metrics
 
